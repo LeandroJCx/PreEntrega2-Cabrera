@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------ Body  ------ */
+body {
+    background-color: #fce4ec;
+    overflow-x: hidden;
+}
+
+/*---------------------*/
+
+/***** Barra de navegación *****/
+
+/*  ----- Header ----- */
+header {
+    margin-bottom: 5px;
+    position: sticky;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    height: 10%;
+    top: 0px;
+    z-index: 10;
+}
+
+/*---------------------*/
+
+/* ----- Logotipo ----- */
+.logo {
+    padding-top: 15px;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+/*----------------------*/
+
+/* ----- Botones ----- */
+.botones {
+    list-style: none;
+    display: inline-flex;
+    padding-left: 0%;
+}
+
+li a {
+    display: block;
+    color: grey;
+    text-align: center;
+    padding: 16px 16px;
+
+}
+
+.boton {
+    margin-block: 2px;
+    text-decoration: none;
+    color: #2F2F2F;
+    position: relative;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.boton::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #2F2F2F;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+}
+
+.boton:hover::after {
+    transform: scaleX(1);
+}
+
+/*---------------------*/
+/*** Fin barra de navegación ***/
+.titulo{
+    text-align: center;
+    font-size: 3rem;
+    padding : 0.8em 0.4;
+}
+
+.fondo{
+    position:relative;
+    cursor:pointer;
+    overflow: hidden;
+
+}
+/*pseudo elemento before*/
+.fondo::before{
+    content:"Para amiguitos peluditos y de cuatro patas.";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color:#838383a6;
+   /* transform: translate(100%);se mueve hacia la derecha */
+   /* transform: scale(0);*/
+    transform: scaleY(0);
+    transition: transform .4s;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items:center ;
+    font-size:1.5rem ;
+    
+}
+.fondo:hover::before{
+  /*  transform: scale(1) rotate(360deg)  ;*/
+     transform: scaleY(1);
+}
+
+.fondo_img{
+    width: 100%;
+    height: 100%;
+    /*la imagen no pierde la resolucion */
+    object-fit: cover;
+}
+
+/****** Sección de Footer ******/
+
+footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer h2 {
+    text-align: center;
+}
+
+footer li {
+    text-align: center;
+}
+
+footer {
+    background-color: rgb(233, 194, 158);
+}
+
+.iconos {
+    width: 20px;
+    height: 20px;
+}
+
+/* ICONOS */
+.icon {
+    display: inline-block;
+    font-size: 44px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.ri-instagram-line {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ri-facebook-circle-line {
+    color: #1877f2;
+    animation-delay: 0.5s;
+    text-decoration: none;
+}
+
+.ri-whatsapp-line {
+    color: #25d366;
+    animation-delay: 1s;
+    text-decoration: none;
+}
+
+.ri-twitter-line {
+    color: rgb(29, 161, 242);
+    animation-delay: 1.5s;
+    text-decoration: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/**** Fin sección de Footer ****/
+.contacto_info {
+    margin-left: 1px;
+    margin-right: 1px;
+    border-style: double;
+    background-color: rgba(240, 248, 255, 0.836);
+}
+.contacto_info h1,
+.contacto_info p {
+    text-align: center;
+}
+
+.row {
+    justify-content: center;
+}
+
+/************** T A R J E T A S ****************/
+.info_section{
+    min-height: 100vh;
+    background: linear-gradient(rgba(20, 20, 20, 0.041),rgba(26, 28, 32, 0.459)), url(../img/fondo/bg1.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: var(--blanco);
+}
+.cards {
+    display: grid;
+    grid-column: 1/-1;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 10rem;
+    padding: 3rem;
+    perspective: 1000px;
+}
+.framework-card {
+    background: #fff;
+    border-radius: 50px;
+    padding: 0.5rem;
+    text-align: center;
+    padding-top: 2.5rem;
+    position: relative;
+    transform-origin: top center;
+    --rotate: 5deg;
+    transform: rotateX(var(--rotate));
+    transition: transform 1s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.framework-card:before {
+    right: auto;
+    left: 20px;
+}
+
+.framework-card:hover {
+    transform: rotateX(-35deg);
+}
+
+card:before,
+.framework-card:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #5c0dac;
+    border: 1px solid #000;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    top: 15px;
+    right: 20px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.framework-card:before,
+.framework-card:after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #5c0dac;
+    border: 1px solid #000;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    top: 15px;
+    right: 20px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.framework-card img {
+    height: 80px;
+    width: 100%;
+    object-fit: contain;
+}
+
+img {
+    max-width: 100%;
+}
+
+.framework-card p {
+    font-family: 'radnika-next';
+    font-weight: 900;
+}
+
+/***********************************************/
+
+/*
+@media (min-width: 480px) teléfono 
+ @media (min-width: 768px) tablet 
+ @media (min-width: 1140px) computadoras 
+ @media (min-width: 1400px) televisores
+*/
